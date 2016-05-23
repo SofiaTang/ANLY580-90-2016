@@ -120,6 +120,26 @@ This is the example to use ggplot2, which is one decent tool in R to visualize t
 ## Jai	Rajora
 ## Yuanhui	Sui
 ## Shanfeng	Tang
+
+Here is my Example. Drawing a shaded line graph using ggplot2. 
+
+```{r,echo=TRUE}
+library(ggplot2) # loading the ggplot2 library
+data("AirPassengers") # Included dataset on Monthly Airline Passenger Numbers 1949-1960. this is a basic time series data
+
+Mydata <- data.frame(
+        Year     = as.numeric(time(AirPassengers)), 
+        AirPassengers= as.numeric(AirPassengers)
+    ) # Convert the AirPassenger.year data set into a data frame
+
+ggplot(Mydata, aes(x=Year, y=AirPassengers)) + 
+  geom_area(colour="black", fill="pink", alpha=.5)+
+  ggtitle("Air Passenger from 1949 to 1960") +
+  ylab("Number of Air Passenger") +
+  xlab("Year")
+
+```
+
 ## Russell	Taylor
 ## Gokul Krishna	Turaga
 ## Bongyong	Uh
